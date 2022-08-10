@@ -1,0 +1,38 @@
+<h2>Quem será pago?</h2>
+<p-toolbar styleClass="mb-2">
+    <div class="p-toolbar-group-left" style="width: 50%">
+        <button
+            pButton
+            pRipple
+            type="button"
+            label="VOLTAR"
+            icon="pi pi-arrow-left"
+            [routerLink]="'/group-spending/create'"
+            class="p-button-sm p-button-primary"
+        ></button>
+        <button
+            pButton
+            pRipple
+            type="button"
+            [label]="'GERAR QR CODES'"
+            icon="pi pi-save"
+            (click)="request()"
+            [disabled]="idPerson==null"
+            class="p-button-sm p-button-success mr-1"
+            style="margin-left: 5px; width: 200px"
+        ></button>
+    </div>
+</p-toolbar>
+<p-orderList [value]="people" [listStyle]="{'max-height':'30rem'}" [dragdrop]="true"
+(onSelectionChange)="onSelect($event)">
+    <ng-template let-people pTemplate="item">
+        <div class="people-item">
+            <div class="people-list-detail">
+                <h5 class="mb-2">{{people.firstName}}</h5>
+            </div>
+            <div class="people-list-action">
+                <h6 class="mb-2">conta pessoal: R${{people.finalBill}}</h6>
+            </div>
+        </div>
+    </ng-template>
+</p-orderList>
