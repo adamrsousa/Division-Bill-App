@@ -6,6 +6,7 @@ import com.payment.bill.v1.domain.model.GroupSpending;
 import com.payment.bill.v1.domain.model.Person;
 import com.payment.bill.v1.domain.repository.GroupSpendingRepository;
 import com.payment.bill.v1.domain.repository.PersonRepository;
+import org.json.JSONException;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -43,6 +44,9 @@ public class GroupSpendingServiceTests extends ObjectsDatabase {
 
     @InjectMocks
     private GroupSpendingService groupService;
+
+    public GroupSpendingServiceTests() throws JSONException {
+    }
 
     // Teste JUnit para método GroupSpendingService.create(GroupSpending)
     @DisplayName("Teste JUnit: GroupSpendingService.create(GroupSpending)")

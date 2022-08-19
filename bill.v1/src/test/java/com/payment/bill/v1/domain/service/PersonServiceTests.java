@@ -4,6 +4,7 @@ import com.payment.bill.v1.ObjectsDatabase;
 import com.payment.bill.v1.api.controller.exception.NotFoundException;
 import com.payment.bill.v1.domain.model.Person;
 import com.payment.bill.v1.domain.repository.PersonRepository;
+import org.json.JSONException;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -33,6 +34,9 @@ public class PersonServiceTests extends ObjectsDatabase {
 
     @InjectMocks
     private PersonService personService;
+
+    public PersonServiceTests() throws JSONException {
+    }
 
     // Teste JUnit para método PersonService.create(Person)
     @DisplayName("Teste JUnit: PersonService.create(Person)")

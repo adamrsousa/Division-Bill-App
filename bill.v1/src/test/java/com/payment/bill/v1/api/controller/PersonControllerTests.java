@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.payment.bill.v1.ObjectsDatabase;
 import com.payment.bill.v1.domain.model.Person;
 import com.payment.bill.v1.domain.service.PersonService;
+import org.json.JSONException;
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,9 @@ public class PersonControllerTests extends ObjectsDatabase {
 
     @MockBean
     private PersonService personService;
+
+    public PersonControllerTests() throws JSONException {
+    }
 
     // JUnit: PersonController.create(Person)
     @DisplayName("JUnit: PersonController.create(Person)")

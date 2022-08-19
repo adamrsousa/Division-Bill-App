@@ -5,6 +5,7 @@ import com.payment.bill.v1.ObjectsDatabase;
 import com.payment.bill.v1.domain.model.GroupSpending;
 import com.payment.bill.v1.domain.model.Person;
 import com.payment.bill.v1.domain.service.GroupSpendingService;
+import org.json.JSONException;
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,9 @@ public class BillDivisionControllerTests extends ObjectsDatabase {
 
     @MockBean
     private GroupSpendingService groupService;
+
+    public BillDivisionControllerTests() throws JSONException {
+    }
 
     // JUnit: BillDivisionController.create(GroupSpending)
     @DisplayName("JUnit: BillDivisionController.create(GroupSpending)")
